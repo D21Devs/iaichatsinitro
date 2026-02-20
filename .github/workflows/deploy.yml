@@ -47,4 +47,3 @@ jobs:
             **/api/patch_tests.php
             **/training/migrate_tests.php
             **/.gitignore
-            index.html
