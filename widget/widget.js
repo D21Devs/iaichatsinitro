@@ -185,6 +185,7 @@
       '#metis-win{width:100vw;height:100dvh;bottom:0;right:0;border-radius:0;transform:translateY(16px);transform-origin:bottom center}',
       '#metis-win.open{transform:translateY(0)}',
       '#metis-btn{bottom:16px;right:16px}',
+      '.m-foot{padding-bottom:max(10px,env(safe-area-inset-bottom))}',
     '}',
   ].join('');
 
@@ -263,6 +264,7 @@
     isOpen = true;
     document.getElementById('metis-win').classList.add('open');
     document.getElementById('metis-badge').classList.remove('on');
+    document.getElementById('metis-btn').style.display = 'none';
     setTimeout(function () {
       var inp = document.getElementById('metis-inp');
       if (inp) inp.focus();
@@ -274,6 +276,7 @@
   function closeChat() {
     isOpen = false;
     document.getElementById('metis-win').classList.remove('open');
+    document.getElementById('metis-btn').style.display = '';
   }
 
   /* ============================================================
