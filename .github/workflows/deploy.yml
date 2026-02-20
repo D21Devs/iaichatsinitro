@@ -3,6 +3,7 @@ name: Deploy → Locaweb
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
