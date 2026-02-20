@@ -1,4 +1,9 @@
 # ──────────────────────────────────────────
+#  Página padrão do diretório
+# ──────────────────────────────────────────
+DirectoryIndex test.html index.html index.php
+
+# ──────────────────────────────────────────
 #  Forçar HTTPS — Locaweb (proxy SSL)
 # ──────────────────────────────────────────
 RewriteEngine On
