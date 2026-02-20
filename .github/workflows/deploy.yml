@@ -28,6 +28,9 @@ jobs:
           username:   ${{ secrets.FTP_USER }}
           password:   ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          protocol:   ftp
+          port:       21
+          log-level:  verbose
           # Exclui arquivos que não devem ir para produção
           exclude: |
             **/.git*
