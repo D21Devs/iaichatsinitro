@@ -368,7 +368,7 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
 <div id="app">
 
   <!-- ══ LEFT PANEL — BLOCOS DE CONHECIMENTO ══ -->
-  <div class="panel mob-active" id="panel-blocks">
+  <div class="panel" id="panel-blocks">
     <div class="panel-header">
       <span class="panel-title">Blocos de Conhecimento</span>
       <button class="btn btn-primary btn-sm" onclick="openBlockModal(null)">+ Novo</button>
@@ -379,7 +379,7 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
   </div>
 
   <!-- ══ CENTER PANEL — CHAT AO VIVO ══ -->
-  <div class="panel" id="panel-chat">
+  <div class="panel mob-active" id="panel-chat">
     <div class="panel-header">
       <span class="panel-title">Chat ao Vivo</span>
       <button class="btn btn-outline btn-sm" onclick="reloadChat()" title="Recarregar chat">&#8635; Reset</button>
@@ -643,13 +643,13 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
 
 <!-- MOBILE BOTTOM NAV -->
 <div id="mobile-nav">
-  <button class="mob-nav-btn active" id="mnav-blocks" onclick="showMobPanel('blocks')">
-    <span class="mob-nav-icon">&#9776;</span>
-    <span>Conhecimento</span>
-  </button>
-  <button class="mob-nav-btn" id="mnav-chat" onclick="showMobPanel('chat')">
+  <button class="mob-nav-btn active" id="mnav-chat" onclick="showMobPanel('chat')">
     <span class="mob-nav-icon">&#9998;</span>
     <span>Chat</span>
+  </button>
+  <button class="mob-nav-btn" id="mnav-blocks" onclick="showMobPanel('blocks')">
+    <span class="mob-nav-icon">&#9776;</span>
+    <span>Conhecimento</span>
   </button>
   <button class="mob-nav-btn" id="mnav-tests" onclick="showMobPanel('tests')">
     <span class="mob-nav-icon">&#9654;</span>

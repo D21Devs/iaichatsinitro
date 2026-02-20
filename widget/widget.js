@@ -184,7 +184,7 @@
     '@media(max-width:460px){',
       '#metis-win{width:100vw;height:100dvh;bottom:0;right:0;border-radius:0;transform:translateY(16px);transform-origin:bottom center}',
       '#metis-win.open{transform:translateY(0)}',
-      '#metis-btn{bottom:16px;right:16px}',
+      '#metis-btn{top:80vh;bottom:auto;right:16px}',
       '.m-foot{padding-bottom:max(10px,env(safe-area-inset-bottom))}',
     '}',
   ].join('');
