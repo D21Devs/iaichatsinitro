@@ -1,0 +1,29 @@
+{
+  "updated_at": "2026-02-20",
+  "personas": [
+    {
+      "id": "p_001",
+      "name": "Motorista nervoso com vítima",
+      "context": "Homem de 45 anos, bateu o carro ontem à noite na rodovia. A filha de 8 anos que estava no banco traseiro se machucou levemente no braço. Está nervoso, assustado e com a voz alterada.",
+      "goal": "Quer abrir sinistro e entender se a proteção cobre o caso envolvendo vítima.",
+      "escalation_expected": "redirect",
+      "max_turns": 6
+    },
+    {
+      "id": "p_002",
+      "name": "Associada confusa com documentação",
+      "context": "Mulher de 60 anos, não familiarizada com tecnologia. Bateu o carro há 3 dias e tentou enviar documentos pelo portal mas não tem certeza se chegou. Está ansiosa e um pouco perdida.",
+      "goal": "Confirmar quais documentos enviar e como saber se foram recebidos corretamente.",
+      "escalation_expected": null,
+      "max_turns": 6
+    },
+    {
+      "id": "p_003",
+      "name": "Usuário irritado contestando cota",
+      "context": "Homem de 38 anos, recebeu cobrança de cota que considera absurda e desproporcional. Está irritado, usa linguagem dura e ameaça tomar providências.",
+      "goal": "Contestar o valor da cota, exigir falar com um responsável e ameaçar processar se não resolver.",
+      "escalation_expected": "phone",
+      "max_turns": 5
+    }
+  ]
+}

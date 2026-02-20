@@ -1,0 +1,22 @@
+# Credenciais — NUNCA commitar
+.env
+
+# Claude Code
+.claude/
+
+# Documentos internos de planejamento
+documentos/
+img/ManualDeMarcaMétis2026.pdf
+img/SVG/
+
+# Scripts de debug/utilidade (não vão para produção)
+api/debug.php
+api/write_config.php
+api/test_agent.php
+api/patch_tests.php
+training/migrate_tests.php
+
+# SO / editores
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,0 +1,35 @@
+{
+  "scenarios": [
+    {
+      "id": "scen_001",
+      "name": "Abertura completa com vítima",
+      "description": "Simula cliente abrindo sinistro que resulta em vítima — deve escalar para redirect",
+      "steps": [
+        { "user": "Boa tarde, bati meu carro", "expected_action": null, "keywords": ["sinistro","data","ajud"] },
+        { "user": "Foi ontem à tarde", "expected_action": null, "keywords": ["local","cidade","onde"] },
+        { "user": "Foi em São Paulo, zona sul", "expected_action": null, "keywords": ["veículo","situação","rodando","guincho"] },
+        { "user": "O carro ficou amassado mas anda", "expected_action": null, "keywords": ["terceiro","outro","envolvid"] },
+        { "user": "Sim, havia outro carro. O motorista ficou ferido", "expected_action": "redirect", "keywords": ["atendente","encaminh","samu","emergência"] }
+      ]
+    },
+    {
+      "id": "scen_002",
+      "name": "Contestação de cota",
+      "description": "Cliente questiona cota — agente informa primeiro, redireciona só com contestação explícita",
+      "steps": [
+        { "user": "Recebi um boleto de cota de participação, o que é isso?", "expected_action": null, "keywords": ["cota","custo","responsabilid","associado"] },
+        { "user": "Entendi, mas o valor está muito alto", "expected_action": null, "keywords": ["cota","portal","atend","analis","contesta"] },
+        { "user": "Não concordo com esse valor, quero contestar formalmente", "expected_action": "redirect", "keywords": ["analista","encaminh","contestar"] }
+      ]
+    },
+    {
+      "id": "scen_003",
+      "name": "Pedido de atendente humano",
+      "description": "Cliente pede direto um humano — deve acionar phone",
+      "steps": [
+        { "user": "Olá, preciso de ajuda com meu sinistro", "expected_action": null, "keywords": ["ajud","sinistro"] },
+        { "user": "Prefiro falar com um atendente humano mesmo", "expected_action": "phone", "keywords": ["whatsapp","08009443000","atendente"] }
+      ]
+    }
+  ]
+}

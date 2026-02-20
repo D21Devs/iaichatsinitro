@@ -1,0 +1,2733 @@
+{
+    "categories": {
+        "saudacoes": "Saudações e Primeiro Contato",
+        "abertura": "Intenção de Abrir Sinistro",
+        "coleta_data": "Coleta: Data",
+        "coleta_local": "Coleta: Local",
+        "coleta_veiculo": "Coleta: Situação do Veículo",
+        "coleta_terc": "Coleta: Terceiros",
+        "vitimas": "Vítimas — Ação Crítica",
+        "documentacao": "Documentação",
+        "status": "Consulta de Status",
+        "pendencias": "Pendências Documentais",
+        "cota": "Cota de Participação",
+        "atendente": "Pedido de Atendente Humano",
+        "faq": "FAQ Metis Brasil",
+        "escopo": "Fora do Escopo",
+        "reclamacoes": "Reclamações e Edge Cases"
+    },
+    "tests": [
+        {
+            "id": "t_001",
+            "question": "Olá",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis",
+                "bem-vind"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_002",
+            "question": "Boa tarde",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_003",
+            "question": "Boa noite, preciso de informações",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_004",
+            "question": "Oi tudo bem?",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_005",
+            "question": "Preciso de ajuda",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_006",
+            "question": "Olá, pode me ajudar?",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_007",
+            "question": "Ei",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis",
+                "ol"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_008",
+            "question": "Alô?",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_009",
+            "question": "Bom dia",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_010",
+            "question": "Preciso resolver uma situação urgente",
+            "expected_action": null,
+            "keywords": [
+                "conta",
+                "detalh",
+                "inform",
+                "ajud",
+                "sinistro",
+                "situação"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_011",
+            "question": "Quero atendimento",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_012",
+            "question": "Você pode me ajudar agora?",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_013",
+            "question": "Precisando de suporte",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_014",
+            "question": "Olá, estou com problema",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "detalh",
+                "conta"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_015",
+            "question": "Oi, quero falar com a Metis",
+            "expected_action": null,
+            "keywords": [
+                "ajud",
+                "sinistro",
+                "metis",
+                "assistente"
+            ],
+            "forbidden": [],
+            "category": "saudacoes"
+        },
+        {
+            "id": "t_016",
+            "question": "Bati meu carro",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "abrir",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_017",
+            "question": "Tive um acidente de carro",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_018",
+            "question": "Meu veículo sofreu uma colisão",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "colisão",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_019",
+            "question": "Quero abrir um sinistro",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr",
+                "abertura"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_020",
+            "question": "Como faço para registrar um sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr",
+                "abertura"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_021",
+            "question": "Preciso comunicar um acidente",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_022",
+            "question": "Meu carro foi batido por outro",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_023",
+            "question": "Sofri uma colisão hoje",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "colisão",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_024",
+            "question": "Quero registrar um acidente",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_025",
+            "question": "Bateram no meu carro estacionado",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_026",
+            "question": "Meu veículo foi atingido",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_027",
+            "question": "Sofri um acidente de trânsito",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_028",
+            "question": "Quero fazer o aviso de sinistro",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_029",
+            "question": "Como comunico um acidente à Metis?",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_030",
+            "question": "Tive uma batida de carro ontem",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_031",
+            "question": "Meu carro colidiu com outro veículo",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "colisão",
+                "data"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_032",
+            "question": "Sofri um acidente e preciso acionar",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "acidente",
+                "data"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_033",
+            "question": "Quero abrir chamado de sinistro por colisão",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_034",
+            "question": "Preciso acionar a proteção por colisão",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "colisão",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_035",
+            "question": "O outro carro me bateu e eu quero registrar",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "data",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "abertura"
+        },
+        {
+            "id": "t_036",
+            "question": "O acidente foi hoje de manhã",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde",
+                "veículo",
+                "rodando"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_037",
+            "question": "Foi ontem à tarde",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde",
+                "veículo",
+                "rodando"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_038",
+            "question": "O acidente foi em 15\/02\/2026",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_039",
+            "question": "Não lembro a data exata do acidente",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "aproximad",
+                "tentar",
+                "ajud"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_040",
+            "question": "Foi no dia 10 deste mês",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_041",
+            "question": "Aconteceu há 3 dias",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_042",
+            "question": "Foi semana passada, não lembro o dia",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde",
+                "tudo bem",
+                "próxim",
+                "ok"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_043",
+            "question": "Aconteceu dia 01\/01\/2026 de madrugada",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_044",
+            "question": "Foi hoje",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_045",
+            "question": "Ontem à noite",
+            "expected_action": null,
+            "keywords": [
+                "cidade",
+                "local",
+                "uf",
+                "onde"
+            ],
+            "forbidden": [],
+            "category": "coleta_data"
+        },
+        {
+            "id": "t_046",
+            "question": "Foi em São Paulo, zona sul",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_047",
+            "question": "Aconteceu em Belo Horizonte\/MG",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_048",
+            "question": "Foi na BR-040, interior de Minas",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_049",
+            "question": "Aqui em Brasília\/DF",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_050",
+            "question": "Foi no Rio de Janeiro, centro",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_051",
+            "question": "Aconteceu em Curitiba\/PR",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_052",
+            "question": "Não sei o nome da rua exata, foi em Salvador",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_053",
+            "question": "Foi em uma estrada no interior de SP",
+            "expected_action": null,
+            "keywords": [
+                "data",
+                "cpf",
+                "vítima",
+                "ferido",
+                "detalh",
+                "inform",
+                "prossegu",
+                "sinistro"
+            ],
+            "forbidden": [],
+            "category": "coleta_local"
+        },
+        {
+            "id": "t_054",
+            "question": "O carro está andando normalmente",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_055",
+            "question": "O veículo está na oficina",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_056",
+            "question": "Chamei um guincho",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_057",
+            "question": "O carro não liga mais",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_058",
+            "question": "Consigo dirigir mas com dificuldade",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_059",
+            "question": "O veículo ficou no local do acidente",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_060",
+            "question": "O motor foi muito afetado, não anda",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_061",
+            "question": "Está rodando mas com barulho estranho",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "cadastro"
+            ],
+            "forbidden": [],
+            "category": "coleta_veiculo"
+        },
+        {
+            "id": "t_062",
+            "question": "Sim, havia outro carro envolvido",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_063",
+            "question": "Só eu me envolvi, bati em um poste",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_064",
+            "question": "Havia um caminhão que fugiu após a batida",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_065",
+            "question": "Dois carros estavam envolvidos",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_066",
+            "question": "Não havia terceiros, foi só meu carro",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_067",
+            "question": "Outra moto me bateu na traseira",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_068",
+            "question": "Bati no carro da frente que freou de repente",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_069",
+            "question": "Alguém bateu no meu carro estacionado e foi embora",
+            "expected_action": null,
+            "keywords": [
+                "sinistro",
+                "cpf",
+                "data",
+                "ajud",
+                "detalh",
+                "prossegu",
+                "vítima",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "coleta_terc"
+        },
+        {
+            "id": "t_070",
+            "question": "Sim, houve vítimas no acidente",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "samu",
+                "emergência",
+                "ferido"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_071",
+            "question": "Meu passageiro ficou ferido",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_072",
+            "question": "Houve feridos no acidente",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_073",
+            "question": "O motorista do outro carro se machucou",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_074",
+            "question": "Teve uma pessoa atropelada",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_075",
+            "question": "Sim, eu fiquei ferido na batida",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_076",
+            "question": "Houve morte no acidente",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_077",
+            "question": "Alguém ficou com ferimento grave",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_078",
+            "question": "Meu filho que estava no carro se machucou",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_079",
+            "question": "O pedestre foi atingido e está ferido",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_080",
+            "question": "Tiveram vítimas fatais no acidente",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_081",
+            "question": "Ficaram 2 pessoas feridas",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_082",
+            "question": "A outra pessoa foi ao hospital",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_083",
+            "question": "Minha esposa está com dor no pescoço",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_084",
+            "question": "Criança ficou machucada no acidente",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_085",
+            "question": "Sim teve ferido, mas leve",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_086",
+            "question": "O outro motorista reclamou de dor",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_087",
+            "question": "Houve vítimas sim, precisaram de socorro",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_088",
+            "question": "Um passageiro está inconsciente",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "samu",
+                "emergência"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_089",
+            "question": "Sim, infelizmente houve uma vítima fatal",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "encaminh",
+                "emergência",
+                "samu"
+            ],
+            "forbidden": [],
+            "category": "vitimas"
+        },
+        {
+            "id": "t_090",
+            "question": "Quais documentos preciso enviar?",
+            "expected_action": null,
+            "keywords": [
+                "cnh",
+                "crlv",
+                "boletim",
+                "foto"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_091",
+            "question": "O que preciso mandar para abrir o sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "cnh",
+                "crlv",
+                "boletim",
+                "foto"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_092",
+            "question": "Preciso do Boletim de Ocorrência?",
+            "expected_action": null,
+            "keywords": [
+                "boletim",
+                "bo",
+                "depend",
+                "caso",
+                "aplicável"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_093",
+            "question": "Não tenho o BO, posso seguir?",
+            "expected_action": null,
+            "keywords": [
+                "boletim",
+                "bo",
+                "depend",
+                "caso",
+                "aplicável"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_094",
+            "question": "Quais fotos devo tirar do veículo?",
+            "expected_action": null,
+            "keywords": [
+                "foto",
+                "veículo",
+                "avaria",
+                "dano",
+                "hodômet",
+                "chassi"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_095",
+            "question": "Preciso de foto do hodômetro?",
+            "expected_action": null,
+            "keywords": [
+                "hodômet",
+                "foto",
+                "sim",
+                "obrigat"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_096",
+            "question": "Não tenho o CRLV, e agora?",
+            "expected_action": null,
+            "keywords": [
+                "crlv",
+                "document",
+                "atend",
+                "ajud"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_097",
+            "question": "Quais são os documentos obrigatórios?",
+            "expected_action": null,
+            "keywords": [
+                "cnh",
+                "crlv",
+                "boletim",
+                "foto"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_098",
+            "question": "Preciso de laudo de alguma oficina?",
+            "expected_action": null,
+            "keywords": [
+                "orçament",
+                "oficina",
+                "laudo",
+                "document",
+                "não"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_099",
+            "question": "Tenho tudo, quando envio os documentos?",
+            "expected_action": "redirect",
+            "keywords": [
+                "portal",
+                "enviar",
+                "sinistro",
+                "registr",
+                "document"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_100",
+            "question": "Minha CNH está vencida, tem problema?",
+            "expected_action": null,
+            "keywords": [
+                "cnh",
+                "document",
+                "atend",
+                "ajud",
+                "verific"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_101",
+            "question": "Preciso de fotos do local do acidente?",
+            "expected_action": null,
+            "keywords": [
+                "foto",
+                "local",
+                "sim",
+                "obrigat"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_102",
+            "question": "Posso enviar documentos digitalizados?",
+            "expected_action": null,
+            "keywords": [
+                "document",
+                "digital",
+                "portal",
+                "enviar"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_103",
+            "question": "Pode me listar todos os documentos necessários?",
+            "expected_action": null,
+            "keywords": [
+                "cnh",
+                "crlv",
+                "boletim",
+                "foto"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_104",
+            "question": "Enviei os documentos, como confirmo o recebimento?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "atend",
+                "sinistro",
+                "registr"
+            ],
+            "forbidden": [],
+            "category": "documentacao"
+        },
+        {
+            "id": "t_105",
+            "question": "Qual o status do meu sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "status",
+                "acessar",
+                "atend",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_106",
+            "question": "Quando meu sinistro vai ser resolvido?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "prazo",
+                "análise",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_107",
+            "question": "Há quanto tempo está em análise?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "análise",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_108",
+            "question": "Meu sinistro está aprovado?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "status",
+                "análise",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_109",
+            "question": "Quero saber se houve atualização no meu caso",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "status",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_110",
+            "question": "Qual a previsão de conclusão do sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "prazo",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_111",
+            "question": "Já analisaram meu caso?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "status",
+                "análise"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_112",
+            "question": "Quanto tempo demora a análise técnica?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "prazo",
+                "análise",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_113",
+            "question": "Meu processo está em sindicância há 20 dias",
+            "expected_action": null,
+            "keywords": [
+                "sindicância",
+                "prazo",
+                "atend",
+                "portal",
+                "08009443000",
+                "15 dia"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_114",
+            "question": "Por que meu sinistro está demorando tanto?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "análise",
+                "atend",
+                "sindicância"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_115",
+            "question": "Meu sinistro foi negado?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "status",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_116",
+            "question": "Quero consultar o protocolo do sinistro",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "protocolo",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_117",
+            "question": "Como acompanho o andamento do sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "telefone",
+                "acompanhar",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_118",
+            "question": "Preciso de atualização urgente do sinistro",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "08009443000",
+                "whatsapp",
+                "atend",
+                "status",
+                "atualiz"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_119",
+            "question": "O que significa sinistro em análise técnica?",
+            "expected_action": null,
+            "keywords": [
+                "análise",
+                "docum",
+                "coberturas",
+                "nexo",
+                "verific"
+            ],
+            "forbidden": [],
+            "category": "status"
+        },
+        {
+            "id": "t_120",
+            "question": "Recebi uma notificação de pendência",
+            "expected_action": null,
+            "keywords": [
+                "pendência",
+                "document",
+                "prazo",
+                "7 dia",
+                "enviar"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_121",
+            "question": "O que está faltando no meu sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "pendência",
+                "document",
+                "portal",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_122",
+            "question": "Qual o prazo para enviar os documentos?",
+            "expected_action": null,
+            "keywords": [
+                "7 dia",
+                "prazo",
+                "corrido",
+                "regulariz"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_123",
+            "question": "Já enviei os documentos, como confirmo?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "atend",
+                "sinistro",
+                "registr",
+                "08009443000",
+                "whatsapp"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_124",
+            "question": "Esqueci de enviar uma foto, posso enviar agora?",
+            "expected_action": null,
+            "keywords": [
+                "enviar",
+                "portal",
+                "prazo",
+                "sim"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_125",
+            "question": "Vou perder o prazo de documentação",
+            "expected_action": null,
+            "keywords": [
+                "prazo",
+                "7 dia",
+                "regulariz",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_126",
+            "question": "Meu prazo venceu, o que acontece?",
+            "expected_action": null,
+            "keywords": [
+                "finaliz",
+                "não regulariz",
+                "prazo",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_127",
+            "question": "Ainda tenho 3 dias para regularizar?",
+            "expected_action": null,
+            "keywords": [
+                "prazo",
+                "7 dia",
+                "regulariz",
+                "enviar"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_128",
+            "question": "Quais são as pendências do meu sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "atend",
+                "pendência",
+                "document"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_129",
+            "question": "Como regularizo a pendência do sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "enviar",
+                "document",
+                "prazo",
+                "portal"
+            ],
+            "forbidden": [],
+            "category": "pendencias"
+        },
+        {
+            "id": "t_130",
+            "question": "O que é cota de participação?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "custo",
+                "responsabilid",
+                "associado",
+                "plano"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_131",
+            "question": "Qual o valor da minha cota?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "valor",
+                "portal",
+                "atend",
+                "apurado"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_132",
+            "question": "Por que tenho que pagar parte do conserto?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "responsabilid",
+                "plano",
+                "regra",
+                "mutualista"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_133",
+            "question": "A cota é muito alta, quero contestar",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "analista",
+                "encaminh",
+                "contestar"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_134",
+            "question": "Não concordo com o valor cobrado na cota",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "analista",
+                "encaminh"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_135",
+            "question": "Como é calculada a cota de participação?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "orçament",
+                "custo",
+                "oficina",
+                "apurado"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_136",
+            "question": "Quando devo pagar a cota?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "pagament",
+                "portal",
+                "atend",
+                "after"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_137",
+            "question": "A cota inclui mão de obra?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "custo",
+                "mão de obra",
+                "orçament"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_138",
+            "question": "Não entendi o que é rateio",
+            "expected_action": null,
+            "keywords": [
+                "rateio",
+                "divisão",
+                "associados",
+                "custo",
+                "proporcional"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_139",
+            "question": "Minha cota veio diferente do esperado",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "portal",
+                "atend",
+                "analis"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_140",
+            "question": "Quero recorrer do valor da cota",
+            "expected_action": "redirect",
+            "keywords": [
+                "atendente",
+                "analista",
+                "encaminh",
+                "recorr"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_141",
+            "question": "Qual a diferença entre cota e franquia?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "mutualista",
+                "associação",
+                "plano"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_142",
+            "question": "A cota é fixa ou variável?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "variável",
+                "evento",
+                "orçament",
+                "apurado"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_143",
+            "question": "Preciso pagar a cota antes do reparo?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "pagament",
+                "portal",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_144",
+            "question": "O custo do reparo ficou abaixo da cota, e agora?",
+            "expected_action": null,
+            "keywords": [
+                "cota",
+                "reparo",
+                "abaixo",
+                "atend",
+                "portal"
+            ],
+            "forbidden": [],
+            "category": "cota"
+        },
+        {
+            "id": "t_145",
+            "question": "Quero falar com uma pessoa",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_146",
+            "question": "Preciso de atendente humano",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_147",
+            "question": "Me conecta com um atendente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_148",
+            "question": "Não quero falar com robô",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_149",
+            "question": "Preciso de suporte humano urgente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_150",
+            "question": "Tem como falar com um atendente agora?",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_151",
+            "question": "Quero ser transferido para atendente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_152",
+            "question": "Preciso de uma pessoa real para me ajudar",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_153",
+            "question": "Pode me passar para um humano?",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_154",
+            "question": "Prefiro falar por telefone ou WhatsApp",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_155",
+            "question": "Tem atendimento humano disponível?",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_156",
+            "question": "Me passa o número para ligar",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_157",
+            "question": "Qual o telefone do atendimento de sinistros?",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_158",
+            "question": "Tem número de WhatsApp da Metis?",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_159",
+            "question": "Qual o WhatsApp do setor de sinistros?",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_160",
+            "question": "Quero falar com o departamento de sinistros",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_161",
+            "question": "Preciso de suporte urgente com um atendente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_162",
+            "question": "Me connecta com o setor de sinistros",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_163",
+            "question": "Estou com dificuldade, preciso de um humano",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_164",
+            "question": "Não consigo resolver por aqui, quero atendente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "atendente"
+        },
+        {
+            "id": "t_165",
+            "question": "O que é a Metis Brasil?",
+            "expected_action": null,
+            "keywords": [
+                "associação",
+                "proteção",
+                "mutualista",
+                "seguradora"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_166",
+            "question": "A Metis é uma seguradora?",
+            "expected_action": null,
+            "keywords": [
+                "não",
+                "seguradora",
+                "associação",
+                "mutualista"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_167",
+            "question": "Como funciona a proteção patrimonial da Metis?",
+            "expected_action": null,
+            "keywords": [
+                "associação",
+                "mutualista",
+                "rateio",
+                "custo",
+                "plano"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_168",
+            "question": "O que é proteção patrimonial mutualista?",
+            "expected_action": null,
+            "keywords": [
+                "associação",
+                "mutualista",
+                "divisão",
+                "rateio"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_169",
+            "question": "A Metis é diferente de seguro normal?",
+            "expected_action": null,
+            "keywords": [
+                "não",
+                "seguradora",
+                "associação",
+                "mutualista"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_170",
+            "question": "Como funciona o rateio na Metis?",
+            "expected_action": null,
+            "keywords": [
+                "rateio",
+                "divisão",
+                "associados",
+                "custo",
+                "proporcional"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_171",
+            "question": "O que é a Lei Complementar 213?",
+            "expected_action": null,
+            "keywords": [
+                "lei",
+                "213",
+                "associação",
+                "mutualista",
+                "proteção"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_172",
+            "question": "A Metis cobre qualquer tipo de dano no carro?",
+            "expected_action": null,
+            "keywords": [
+                "coberturas",
+                "plano",
+                "contrato",
+                "regulamento"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_173",
+            "question": "O que está incluído na minha proteção?",
+            "expected_action": null,
+            "keywords": [
+                "plano",
+                "contrato",
+                "coberturas",
+                "portal",
+                "atend"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_174",
+            "question": "Qualquer pessoa pode dirigir meu veículo?",
+            "expected_action": null,
+            "keywords": [
+                "condut",
+                "regulamento",
+                "plano",
+                "caso"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_175",
+            "question": "Minha proteção está ativa?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "status",
+                "atend",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_176",
+            "question": "O que acontece se eu não pagar a mensalidade?",
+            "expected_action": null,
+            "keywords": [
+                "inadimplência",
+                "contrato",
+                "ativo",
+                "cobertura"
+            ],
+            "forbidden": [],
+            "category": "faq"
+        },
+        {
+            "id": "t_177",
+            "question": "Quero renovar meu seguro de vida",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo",
+                "patrimonial"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_178",
+            "question": "Qual o melhor seguro de carro do mercado?",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_179",
+            "question": "Me recomenda uma seguradora barata",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_180",
+            "question": "Quero fazer um financiamento de veículo",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_181",
+            "question": "Me fala sobre IPVA do meu carro",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_182",
+            "question": "Me conta uma piada",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_183",
+            "question": "Como está o tempo hoje?",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_184",
+            "question": "Me ajuda com meu imposto de renda",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_185",
+            "question": "Qual a cotação do dólar hoje?",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_186",
+            "question": "Me recomenda um bom mecânico na minha cidade",
+            "expected_action": null,
+            "keywords": [
+                "sinistros",
+                "metis",
+                "ajud",
+                "escopo"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_187",
+            "question": "Quero cancelar minha associação",
+            "expected_action": "phone",
+            "keywords": [
+                "portal",
+                "atend",
+                "08009443000",
+                "sinistros"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_188",
+            "question": "Quero contratar a Metis Brasil agora",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "atend",
+                "08009443000",
+                "sinistros"
+            ],
+            "forbidden": [],
+            "category": "escopo"
+        },
+        {
+            "id": "t_189",
+            "question": "Estou muito insatisfeito com o atendimento",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000",
+                "sinto"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_190",
+            "question": "Isso é um absurdo, quero reclamar formalmente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_191",
+            "question": "Vou processar a Metis judicialmente",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000",
+                "sinto"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_192",
+            "question": "Já faz 2 meses e meu sinistro não foi resolvido",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_193",
+            "question": "Estou sendo ameaçado pelo outro motorista",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_194",
+            "question": "O outro motorista está me intimidando",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_195",
+            "question": "Minha CPF é 111.111.111-11",
+            "expected_action": null,
+            "keywords": [
+                "cpf",
+                "placa",
+                "veículo",
+                "dados",
+                "cadastro",
+                "informar"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_196",
+            "question": "Minha CPF é 123.456.789-09",
+            "expected_action": null,
+            "keywords": [
+                "cnh",
+                "placa",
+                "veículo",
+                "sinistro",
+                "ajud",
+                "perfeito"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_197",
+            "question": "A placa do meu carro é ABC-1234",
+            "expected_action": null,
+            "keywords": [
+                "cpf",
+                "placa",
+                "veículo",
+                "dados",
+                "cadastro",
+                "sinistro",
+                "informar",
+                "ok"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_198",
+            "question": "Qual o número do meu protocolo de sinistro?",
+            "expected_action": null,
+            "keywords": [
+                "portal",
+                "atend",
+                "08009443000",
+                "protocolo"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_199",
+            "question": "Meu sinistro foi encerrado sem resolução",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000",
+                "sinto"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        },
+        {
+            "id": "t_200",
+            "question": "Não recebi nenhum contato da Metis sobre meu caso",
+            "expected_action": "phone",
+            "keywords": [
+                "whatsapp",
+                "atendente",
+                "sinistros",
+                "08009443000"
+            ],
+            "forbidden": [],
+            "category": "reclamacoes"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+name: Deploy → Locaweb
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Gera o .env com a chave da OpenAI a partir dos Secrets do repo
+      - name: Criar .env
+        run: |
+          echo "OPENAI_API_KEY_1=${{ secrets.OPENAI_API_KEY_1 }}" > .env
+
+      # Deploy por FTP para Locaweb
+      # Pasta de destino: raiz do FTP + /metis/sinistro/
+      # Ajuste FTP_SERVER_DIR se o caminho no servidor for diferente
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:     ${{ secrets.FTP_HOST }}
+          username:   ${{ secrets.FTP_USER }}
+          password:   ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          # Exclui arquivos que não devem ir para produção
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/.claude/**
+            **/documentos/**
+            **/img/SVG/**
+            **/img/ManualDeMarcaMétis2026.pdf
+            **/api/debug.php
+            **/api/write_config.php
+            **/api/test_agent.php
+            **/api/patch_tests.php
+            **/training/migrate_tests.php
+            **/.gitignore
