@@ -2,7 +2,10 @@
 // ============================================================
 // Metis Brasil — Endpoint de Chat
 // POST /sinistro/api/chat.php
-// Body: {"message": "...", "session_id": "..."}
+// Body: {"message": "...", "session_id": "...", "history": [...]}
+// history (opcional): array [{role, content}] enviado pelo chat full-page
+//   → se presente, usado como contexto direto (contexto 100% persistido)
+//   → se ausente, cai para PHP session (compat. com widget)
 // ============================================================
 
 // Suprime warnings/notices para não contaminar o JSON
@@ -32,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Lê e valida o body
-$raw = file_get_contents('php://input');
+$raw   = file_get_contents('php://input');
 $input = json_decode($raw, true);
 
 $userMessage = trim($input['message'] ?? '');
@@ -49,38 +52,49 @@ if (mb_strlen($userMessage) > 1000) {
     $userMessage = mb_substr($userMessage, 0, 1000);
 }
 
-// ---- Gerenciamento de histórico via sessão PHP ----
-ini_set('session.use_cookies', '0');
-ini_set('session.use_only_cookies', '0');
-session_id($sessionId);
-session_start();
+// ---- Gerenciamento de histórico ----
+// Se o cliente enviou `history` (chat full-page), usa diretamente — contexto real persistido.
+// Caso contrário, cai para PHP session (compatibilidade com o widget).
+$clientHistory = isset($input['history']) && is_array($input['history']) ? $input['history'] : null;
+$useSession    = ($clientHistory === null);
 
-if (!isset($_SESSION['history']) || !is_array($_SESSION['history'])) {
-    $_SESSION['history'] = [];
-}
+if (!$useSession) {
+    // Filtra e sanitiza o histórico enviado pelo cliente
+    $history = array_values(array_filter($clientHistory, function ($m) {
+        return in_array($m['role'] ?? '', ['user', 'assistant'], true) && !empty($m['content']);
+    }));
+    // Limita a 40 mensagens para não estourar tokens
+    if (count($history) > 40) {
+        $history = array_slice($history, -40);
+    }
+} else {
+    // Fallback: PHP session (widget)
+    ini_set('session.use_cookies', '0');
+    ini_set('session.use_only_cookies', '0');
+    session_id($sessionId);
+    session_start();
 
-// Adiciona mensagem do usuário ao histórico
-$_SESSION['history'][] = [
-    'role'    => 'user',
-    'content' => $userMessage
-];
-
-// Mantém apenas as últimas 30 mensagens (15 trocas) para não estourar tokens
-if (count($_SESSION['history']) > 30) {
-    $_SESSION['history'] = array_slice($_SESSION['history'], -30);
+    if (!isset($_SESSION['history']) || !is_array($_SESSION['history'])) {
+        $_SESSION['history'] = [];
+    }
+    $_SESSION['history'][] = ['role' => 'user', 'content' => $userMessage];
+    if (count($_SESSION['history']) > 30) {
+        $_SESSION['history'] = array_slice($_SESSION['history'], -30);
+    }
+    $history = $_SESSION['history'];
 }
 
 // ---- Monta payload para OpenAI ----
 $messages = array_merge(
     [['role' => 'system', 'content' => SYSTEM_PROMPT]],
-    $_SESSION['history']
+    $history
 );
 
 // ---- Chama OpenAI ----
 $apiResponse = callOpenAI($messages);
 
 if (isset($apiResponse['error'])) {
-    session_write_close();
+    if ($useSession) session_write_close();
     ob_clean();
     http_response_code(502);
     echo json_encode([
@@ -94,13 +108,11 @@ if (isset($apiResponse['error'])) {
 
 $aiContent = $apiResponse['choices'][0]['message']['content'] ?? '{}';
 
-// Salva resposta da IA no histórico
-$_SESSION['history'][] = [
-    'role'    => 'assistant',
-    'content' => $aiContent
-];
-
-session_write_close();
+// Salva resposta no histórico (apenas modo session)
+if ($useSession) {
+    $_SESSION['history'][] = ['role' => 'assistant', 'content' => $aiContent];
+    session_write_close();
+}
 
 // ---- Parse e retorno ----
 $parsed = json_decode($aiContent, true);

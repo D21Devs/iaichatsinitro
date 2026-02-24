@@ -260,7 +260,7 @@ $agentName = htmlspecialchars(AGENT_NAME);
 
     <div class="cards">
 
-      <a class="card card-agent" href="sinistro/test.html">
+      <a class="card card-agent" href="sinistro/chat.php">
         <div class="card-icon">💬</div>
         <div class="card-title">Falar com o Agente</div>
         <div class="card-desc">
