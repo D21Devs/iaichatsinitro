@@ -23,8 +23,9 @@ define('PORTAL_URL', 'https://associadometis.site/cliente/login');
 define('PHONE_NUMBER', '08009443000');
 define('PHONE_WHATSAPP', '08009443000'); // WhatsApp Sinistros
 
-define('BRAND_PRIMARY', '#2563eb'); // azul
-define('BRAND_ACCENT',  '#06b6d4'); // cyan
+define('BRAND_PRIMARY',   '#2563eb'); // azul
+define('BRAND_ACCENT',    '#06b6d4'); // cyan
+define('PANEL_PASSWORD',  'metis06!@');
 
 // Lê o knowledge.json uma única vez para uso das funções abaixo
 function _loadKnowledge(): array {

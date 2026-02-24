@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/api/config.php';
 $agentName    = htmlspecialchars(AGENT_NAME);
 $welcomeMsg   = htmlspecialchars(WELCOME_MESSAGE, ENT_QUOTES);
@@ -299,6 +300,7 @@ $storageKey   = 'sinistro_chat_sessions';
 
     <div class="sb-footer">
       Powered by <a href="https://iaichat.com.br" target="_blank">IAIchat</a>
+      <a href="?logout=1" style="display:block;margin-top:6px;opacity:.5;font-size:11px;" title="Sair">&#8286; Sair</a>
     </div>
   </div>
   <div class="sb-overlay" id="sb-overlay" onclick="closeSidebar()"></div>

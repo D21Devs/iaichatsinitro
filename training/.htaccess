@@ -1,0 +1,4 @@
+<Files "index.html">
+    Order deny,allow
+    Deny from all
+</Files>
