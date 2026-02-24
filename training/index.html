@@ -351,6 +351,125 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
   /* Tab nav — letras menores no mobile */
   .tab-btn { font-size: 10px; padding: 7px 2px; }
 }
+
+/* ── HELP MODAL ───────────────────────────────────────────── */
+#help-overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,.52);
+  z-index:3000; display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none; transition:opacity .2s;
+}
+#help-overlay.open { opacity:1; pointer-events:all; }
+#help-wrap {
+  background:white; border-radius:14px;
+  width:min(900px,96vw); height:min(640px,92vh);
+  display:flex; overflow:hidden;
+  box-shadow:0 24px 64px rgba(0,0,0,.26);
+  transform:translateY(14px); transition:transform .25s;
+}
+#help-overlay.open #help-wrap { transform:translateY(0); }
+
+#help-sidebar {
+  width:215px; flex-shrink:0;
+  background:var(--gray-50); border-right:1px solid var(--gray-200);
+  display:flex; flex-direction:column;
+}
+#help-sidebar-top {
+  padding:18px 16px 14px; border-bottom:1px solid var(--gray-200);
+}
+#help-sidebar-top h2 { font-size:13px; font-weight:700; color:var(--gray-900); margin-bottom:3px; }
+#help-sidebar-top p  { font-size:11px; color:var(--gray-400); line-height:1.4; margin:0; }
+#help-sidebar-nav { flex:1; overflow-y:auto; padding:6px 0; }
+.h-nav-item {
+  display:flex; align-items:center; gap:9px;
+  padding:9px 14px; cursor:pointer; font-size:12px; color:var(--gray-600);
+  border:none; background:none; text-align:left; width:100%; font-family:inherit;
+  border-left:3px solid transparent; transition:all .15s;
+}
+.h-nav-item:hover { background:var(--gray-100); color:var(--gray-900); }
+.h-nav-item.active { background:var(--blue-light); color:var(--blue); border-left-color:var(--blue); font-weight:600; }
+.h-nav-num {
+  width:21px; height:21px; border-radius:50%; background:var(--gray-200); color:var(--gray-500);
+  font-size:10px; font-weight:700; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+.h-nav-item.active .h-nav-num { background:var(--blue); color:white; }
+
+#help-body { flex:1; overflow-y:auto; background:white; }
+#help-body-hd {
+  position:sticky; top:0; background:white; z-index:5;
+  padding:10px 14px; border-bottom:1px solid var(--gray-100);
+  display:flex; justify-content:flex-end;
+}
+#help-close {
+  background:var(--gray-100); border:none; border-radius:50%;
+  width:28px; height:28px; cursor:pointer; font-size:14px;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gray-500); transition:background .15s;
+}
+#help-close:hover { background:var(--gray-200); }
+
+.h-section { display:none; padding:26px 30px 40px; }
+.h-section.active { display:block; }
+.h-section-title { font-size:18px; font-weight:700; color:var(--gray-900); margin-bottom:5px; }
+.h-section-lead  { font-size:13px; color:var(--gray-500); line-height:1.65; margin-bottom:20px; padding-bottom:18px; border-bottom:1px solid var(--gray-100); }
+
+/* Steps */
+.h-steps { display:flex; flex-direction:column; gap:13px; margin-bottom:20px; }
+.h-step  { display:flex; gap:12px; align-items:flex-start; }
+.h-step-num {
+  width:26px; height:26px; border-radius:50%; background:var(--blue); color:white;
+  font-size:11px; font-weight:700; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+}
+.h-step-body b { font-size:13px; color:var(--gray-900); display:block; margin-bottom:3px; }
+.h-step-body p { font-size:12px; color:var(--gray-500); line-height:1.6; margin:0; }
+
+/* Mockup (screenshot simulado) */
+.h-mockup {
+  border:1.5px solid var(--gray-200); border-radius:10px; overflow:hidden;
+  margin:18px 0; box-shadow:0 3px 14px rgba(0,0,0,.07);
+}
+.h-mockup-bar {
+  background:var(--gray-100); padding:7px 12px; border-bottom:1px solid var(--gray-200);
+  display:flex; align-items:center; gap:5px;
+}
+.h-dot { width:9px; height:9px; border-radius:50%; }
+.h-mockup-title { font-size:10px; color:var(--gray-500); margin-left:6px; }
+.h-mockup-body  { padding:12px; }
+
+/* Tip */
+.h-tip {
+  background:var(--blue-light); border-left:3px solid var(--blue);
+  border-radius:0 8px 8px 0; padding:10px 14px;
+  font-size:12px; color:var(--blue-dark); line-height:1.6; margin:14px 0;
+}
+.h-tip b { display:block; font-size:10px; text-transform:uppercase; letter-spacing:.5px; margin-bottom:3px; color:var(--blue); }
+
+/* Grid cards */
+.h-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0; }
+.h-card { border:1px solid var(--gray-200); border-radius:8px; padding:13px; background:var(--gray-50); }
+.h-card-head { font-size:12px; font-weight:700; color:var(--gray-800); margin-bottom:5px; display:flex; align-items:center; gap:7px; }
+.h-card p { font-size:11px; color:var(--gray-500); line-height:1.55; margin:0; }
+
+/* Badge inline */
+.h-b { display:inline-block; padding:1px 7px; border-radius:10px; font-size:10px; font-weight:700; }
+.h-b.blue   { background:var(--blue-light); color:var(--blue); }
+.h-b.green  { background:#dcfce7; color:#16a34a; }
+.h-b.red    { background:#fee2e2; color:#dc2626; }
+.h-b.orange { background:#ffedd5; color:#c2410c; }
+.h-b.gray   { background:var(--gray-100); color:var(--gray-600); }
+
+/* Score badge */
+.h-score { display:inline-flex; flex-direction:column; align-items:center; border:2px solid; border-radius:8px; padding:5px 12px; }
+.h-score .n { font-size:22px; font-weight:700; line-height:1; }
+.h-score .l { font-size:9px; color:var(--gray-400); margin-top:2px; }
+
+@media(max-width:600px) {
+  #help-sidebar { display:none; }
+  .h-section { padding:18px 16px 32px; }
+  .h-grid { grid-template-columns:1fr; }
+  #help-wrap { width:100vw; height:100dvh; border-radius:0; }
+}
 </style>
 </head>
 <body>
@@ -362,6 +481,7 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
   <h1>Painel de Treinamento</h1>
   <span class="sep"></span>
   <span class="badge" id="header-badge">Carregando...</span>
+  <button class="btn btn-outline btn-sm" onclick="openHelp()" style="gap:5px">&#9432; Tutorial</button>
 </div>
 
 <!-- APP LAYOUT -->
@@ -640,6 +760,375 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MODAL DE AJUDA / TUTORIAL
+     ══════════════════════════════════════════════════════════ -->
+<div id="help-overlay">
+<div id="help-wrap">
+
+  <!-- Sidebar de navegação -->
+  <div id="help-sidebar">
+    <div id="help-sidebar-top">
+      <h2>Guia do Painel</h2>
+      <p>Tudo que você precisa para treinar o agente Metis.</p>
+    </div>
+    <div id="help-sidebar-nav">
+      <button class="h-nav-item active" data-sec="0" onclick="switchHelp(0)"><span class="h-nav-num">1</span> Visão Geral</button>
+      <button class="h-nav-item" data-sec="1" onclick="switchHelp(1)"><span class="h-nav-num">2</span> Blocos de Conhecimento</button>
+      <button class="h-nav-item" data-sec="2" onclick="switchHelp(2)"><span class="h-nav-num">3</span> Chat ao Vivo</button>
+      <button class="h-nav-item" data-sec="3" onclick="switchHelp(3)"><span class="h-nav-num">4</span> Testes Automáticos</button>
+      <button class="h-nav-item" data-sec="4" onclick="switchHelp(4)"><span class="h-nav-num">5</span> Gerenciar Testes</button>
+      <button class="h-nav-item" data-sec="5" onclick="switchHelp(5)"><span class="h-nav-num">6</span> Simulações LLM</button>
+    </div>
+  </div>
+
+  <!-- Corpo do conteúdo -->
+  <div id="help-body">
+    <div id="help-body-hd">
+      <button id="help-close" onclick="closeHelp()" aria-label="Fechar">&#x2715;</button>
+    </div>
+
+    <!-- ══ SEÇÃO 1 — VISÃO GERAL ══ -->
+    <div class="h-section active" id="h-sec-0">
+      <div class="h-section-title">Visão Geral do Painel</div>
+      <div class="h-section-lead">O painel de treinamento é dividido em <strong>3 áreas</strong> que trabalham juntas. Use-o para gerenciar o conhecimento do agente, testar em tempo real e medir a performance com testes automatizados.</div>
+
+      <!-- Mockup do layout -->
+      <div class="h-mockup">
+        <div class="h-mockup-bar">
+          <div class="h-dot" style="background:#ff5f57"></div>
+          <div class="h-dot" style="background:#febc2e"></div>
+          <div class="h-dot" style="background:#28c840"></div>
+          <span class="h-mockup-title">Painel de Treinamento — Metis Brasil</span>
+        </div>
+        <div class="h-mockup-body">
+          <div style="display:flex;gap:6px;height:115px">
+            <!-- Panel esquerdo -->
+            <div style="width:95px;border:1px solid var(--gray-200);border-radius:5px;overflow:hidden;flex-shrink:0">
+              <div style="background:var(--gray-50);padding:4px 7px;font-size:8px;font-weight:700;color:var(--gray-500);border-bottom:1px solid var(--gray-200);text-transform:uppercase">Blocos</div>
+              <div style="padding:4px;display:flex;flex-direction:column;gap:3px">
+                <div style="display:flex;align-items:center;gap:3px;border:1px solid var(--gray-200);border-radius:3px;padding:3px 5px">
+                  <div style="width:11px;height:6px;background:var(--blue);border-radius:3px;flex-shrink:0"></div>
+                  <span style="font-size:7px;color:var(--gray-700);overflow:hidden;white-space:nowrap">Regras escalon.</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:3px;border:1px solid var(--gray-200);border-radius:3px;padding:3px 5px">
+                  <div style="width:11px;height:6px;background:var(--blue);border-radius:3px;flex-shrink:0"></div>
+                  <span style="font-size:7px;color:var(--gray-700)">Coberturas</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:3px;border:1px solid var(--gray-200);border-radius:3px;padding:3px 5px;opacity:.45">
+                  <div style="width:11px;height:6px;background:var(--gray-300);border-radius:3px;flex-shrink:0"></div>
+                  <span style="font-size:7px;color:var(--gray-400)">Formalidades</span>
+                </div>
+              </div>
+            </div>
+            <!-- Panel central -->
+            <div style="flex:1;border:1px solid var(--gray-200);border-radius:5px;overflow:hidden">
+              <div style="background:var(--gray-50);padding:4px 7px;font-size:8px;font-weight:700;color:var(--gray-500);border-bottom:1px solid var(--gray-200);text-transform:uppercase">Chat ao Vivo</div>
+              <div style="padding:6px;display:flex;flex-direction:column;gap:4px">
+                <div style="background:white;border:1px solid var(--gray-100);border-radius:5px;padding:4px 7px;font-size:8px;color:var(--gray-700);align-self:flex-start;max-width:90%">Olá! Sou a Assistente Metis. Como posso ajudar?</div>
+                <div style="background:var(--blue);border-radius:5px;padding:4px 7px;font-size:8px;color:white;align-self:flex-end;max-width:75%">Quero abrir um sinistro</div>
+                <div style="background:white;border:1px solid var(--gray-100);border-radius:5px;padding:4px 7px;font-size:8px;color:var(--gray-700);align-self:flex-start;max-width:90%">Claro! Vou te orientar no processo...</div>
+              </div>
+            </div>
+            <!-- Panel direito -->
+            <div style="width:95px;border:1px solid var(--gray-200);border-radius:5px;overflow:hidden;flex-shrink:0">
+              <div style="background:var(--gray-50);padding:4px 7px;font-size:8px;font-weight:700;color:var(--gray-500);border-bottom:1px solid var(--gray-200);text-transform:uppercase">Testes</div>
+              <div style="padding:6px;display:flex;flex-direction:column;align-items:center;gap:5px">
+                <div style="border:2px solid var(--green);border-radius:6px;padding:4px 10px;text-align:center">
+                  <div style="font-size:14px;font-weight:700;color:var(--green)">92%</div>
+                  <div style="font-size:7px;color:var(--gray-400)">Score</div>
+                </div>
+                <div style="display:flex;gap:2px;width:100%">
+                  <div style="flex:1;background:#dcfce7;border-radius:2px;padding:2px;text-align:center;font-size:7px;color:#16a34a;font-weight:700">OK</div>
+                  <div style="flex:1;background:#fee2e2;border-radius:2px;padding:2px;text-align:center;font-size:7px;color:#dc2626;font-weight:700">FAIL</div>
+                  <div style="flex:1;background:#dcfce7;border-radius:2px;padding:2px;text-align:center;font-size:7px;color:#16a34a;font-weight:700">OK</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards das 3 áreas -->
+      <div class="h-grid">
+        <div class="h-card">
+          <div class="h-card-head" style="color:var(--blue)">&#9776; Blocos de Conhecimento</div>
+          <p>O "cérebro" do agente. Cada bloco é uma seção de instruções que define como ele responde. Adicione, edite e ative/desative sem precisar recriar do zero.</p>
+        </div>
+        <div class="h-card">
+          <div class="h-card-head" style="color:var(--blue)">&#9998; Chat ao Vivo</div>
+          <p>Converse com o agente em tempo real para validar manualmente as instruções que você editou antes de rodar os testes automatizados.</p>
+        </div>
+        <div class="h-card">
+          <div class="h-card-head" style="color:var(--blue)">&#9654; Testes & Simulações</div>
+          <p>Execute uma bateria de perguntas e veja um score de aprovação. A aba Simulações roda conversas completas com um usuário simulado por IA.</p>
+        </div>
+        <div class="h-card">
+          <div class="h-card-head" style="color:var(--green)">&#10003; Fluxo recomendado</div>
+          <p><strong>1.</strong> Edite os blocos &rarr; <strong>2.</strong> Teste no chat &rarr; <strong>3.</strong> Rode os testes &rarr; <strong>4.</strong> Salve a versão se o score melhorou.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SEÇÃO 2 — BLOCOS DE CONHECIMENTO ══ -->
+    <div class="h-section" id="h-sec-1">
+      <div class="h-section-title">Blocos de Conhecimento</div>
+      <div class="h-section-lead">Os blocos são injeções de instrução enviadas ao agente antes de cada conversa. Eles definem comportamento, regras, tom e informações do produto. Você pode ter quantos blocos quiser e controlar individualmente quais estão ativos.</div>
+
+      <div class="h-steps">
+        <div class="h-step"><div class="h-step-num">1</div><div class="h-step-body"><b>Clique em "+ Novo" no painel esquerdo</b><p>Um modal abrirá pedindo nome, categoria e conteúdo do bloco.</p></div></div>
+        <div class="h-step"><div class="h-step-num">2</div><div class="h-step-body"><b>Escolha uma categoria</b><p>A categoria organiza o bloco e é usada como filtro nos testes. Use <em>base</em> para instruções gerais e <em>escalonamento</em> para regras de encaminhamento.</p></div></div>
+        <div class="h-step"><div class="h-step-num">3</div><div class="h-step-body"><b>Escreva o conteúdo do bloco</b><p>Use linguagem direta e imperativa. Ex: "Quando o cliente mencionar 'sinistro', peça o número do contrato antes de qualquer outra informação."</p></div></div>
+        <div class="h-step"><div class="h-step-num">4</div><div class="h-step-body"><b>Use o toggle para ativar/desativar</b><p>Blocos desativados ficam visíveis na lista mas não são enviados ao agente. Ideal para testar o efeito de remover uma instrução sem excluí-la.</p></div></div>
+      </div>
+
+      <!-- Mockup de bloco -->
+      <div class="h-mockup">
+        <div class="h-mockup-bar">
+          <div class="h-dot" style="background:#ff5f57"></div>
+          <div class="h-dot" style="background:#febc2e"></div>
+          <div class="h-dot" style="background:#28c840"></div>
+          <span class="h-mockup-title">Painel Esquerdo — Blocos de Conhecimento</span>
+        </div>
+        <div class="h-mockup-body" style="display:flex;flex-direction:column;gap:6px">
+          <div style="border:1px solid var(--blue);border-radius:6px;padding:9px 11px;background:var(--blue-light)">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+              <div style="width:28px;height:15px;background:var(--blue);border-radius:8px;position:relative;flex-shrink:0">
+                <div style="position:absolute;width:11px;height:11px;background:white;border-radius:50%;right:2px;top:2px"></div>
+              </div>
+              <span style="font-size:12px;font-weight:700;color:var(--gray-900);flex:1">Regras de Escalonamento</span>
+              <span style="font-size:10px;background:var(--blue);color:white;padding:1px 7px;border-radius:10px">escalonamento</span>
+            </div>
+            <div style="font-size:11px;color:var(--gray-500)">Se o cliente pedir para falar com humano, ou mencionar urgência médica...</div>
+          </div>
+          <div style="border:1px solid var(--gray-200);border-radius:6px;padding:9px 11px;opacity:.55">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+              <div style="width:28px;height:15px;background:var(--gray-300);border-radius:8px;position:relative;flex-shrink:0">
+                <div style="position:absolute;width:11px;height:11px;background:white;border-radius:50%;left:2px;top:2px"></div>
+              </div>
+              <span style="font-size:12px;font-weight:700;color:var(--gray-400);flex:1">Tom e Linguagem</span>
+              <span style="font-size:10px;background:var(--gray-100);color:var(--gray-500);padding:1px 7px;border-radius:10px">comportamento</span>
+            </div>
+            <div style="font-size:11px;color:var(--gray-400)">Responda sempre em português do Brasil, com tom profissional e...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-grid">
+        <div class="h-card"><div class="h-card-head"><span class="h-b blue">base</span></div><p>Instruções fundamentais: identidade do agente, saudação, idioma, tom geral.</p></div>
+        <div class="h-card"><div class="h-card-head"><span class="h-b blue">comportamento</span></div><p>Regras de como o agente deve agir: limites, proibições, fluxo de atendimento.</p></div>
+        <div class="h-card"><div class="h-card-head"><span class="h-b blue">escalonamento</span></div><p>Quando e como encaminhar para portal ou WhatsApp. Palavras-gatilho.</p></div>
+        <div class="h-card"><div class="h-card-head"><span class="h-b blue">conhecimento</span></div><p>Informações de produto: coberturas, planos, prazos, processos de sinistro.</p></div>
+      </div>
+
+      <div class="h-tip"><b>&#128161; Dica</b>Prefira blocos curtos e focados em um único tema. Blocos muito longos podem diluir a atenção do modelo. Se um bloco tiver mais de 400 palavras, considere dividir em dois.</div>
+    </div>
+
+    <!-- ══ SEÇÃO 3 — CHAT AO VIVO ══ -->
+    <div class="h-section" id="h-sec-2">
+      <div class="h-section-title">Chat ao Vivo</div>
+      <div class="h-section-lead">O painel central exibe o widget do chatbot em tempo real. Use para validar manualmente qualquer mudança feita nos blocos antes de rodar a bateria de testes automáticos.</div>
+
+      <div class="h-steps">
+        <div class="h-step"><div class="h-step-num">1</div><div class="h-step-body"><b>Digite como se fosse um usuário real</b><p>Teste os cenários mais comuns: abertura de sinistro, dúvidas sobre cobertura, solicitação de falar com humano, pedido de número de contato.</p></div></div>
+        <div class="h-step"><div class="h-step-num">2</div><div class="h-step-body"><b>Observe a resposta do agente</b><p>Verifique se o tom está correto, se as informações são precisas e se o escalonamento acontece na hora certa.</p></div></div>
+        <div class="h-step"><div class="h-step-num">3</div><div class="h-step-body"><b>Edite um bloco e clique ↺ Reset</b><p>Toda alteração nos blocos é aplicada imediatamente. Use o botão <strong>↺ Reset</strong> para limpar o histórico e começar uma nova conversa com as instruções atualizadas.</p></div></div>
+      </div>
+
+      <div class="h-mockup">
+        <div class="h-mockup-bar">
+          <div class="h-dot" style="background:#ff5f57"></div>
+          <div class="h-dot" style="background:#febc2e"></div>
+          <div class="h-dot" style="background:#28c840"></div>
+          <span class="h-mockup-title">Chat ao Vivo — Widget Metis</span>
+        </div>
+        <div class="h-mockup-body">
+          <div style="background:#f4f6f9;border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:8px">
+            <div style="background:white;border-radius:12px;border-bottom-left-radius:3px;padding:9px 13px;font-size:12px;color:var(--gray-800);align-self:flex-start;max-width:85%;box-shadow:0 1px 4px rgba(0,0,0,.07)">Olá! Sou a Assistente Metis. Estou aqui para te ajudar com sinistros da Metis Brasil. Como posso te ajudar?</div>
+            <div style="background:var(--blue);border-radius:12px;border-bottom-right-radius:3px;padding:9px 13px;font-size:12px;color:white;align-self:flex-end;max-width:75%">Preciso de ajuda com meu sinistro</div>
+            <div style="background:white;border-radius:12px;border-bottom-left-radius:3px;padding:9px 13px;font-size:12px;color:var(--gray-800);align-self:flex-start;max-width:85%;box-shadow:0 1px 4px rgba(0,0,0,.07)">Claro! Para te ajudar com o sinistro, você pode acessar o <strong>Portal do Associado</strong> ou me contar o que aconteceu.</div>
+            <div style="display:flex;gap:6px;margin-top:2px">
+              <div style="flex:1;border:1px solid var(--gray-200);border-radius:18px;padding:7px 12px;font-size:12px;color:var(--gray-400)">Digite sua mensagem...</div>
+              <div style="width:34px;height:34px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-tip"><b>&#128161; Dica de teste manual</b>Tente sempre os cenários extremos: cliente muito irritado, pedido impossível, pergunta fora do escopo. O agente deve redirecionar educadamente sem inventar informações.</div>
+    </div>
+
+    <!-- ══ SEÇÃO 4 — TESTES AUTOMÁTICOS ══ -->
+    <div class="h-section" id="h-sec-3">
+      <div class="h-section-title">Testes Automáticos</div>
+      <div class="h-section-lead">A aba <strong>&#9654; Rodar</strong> executa uma bateria de perguntas predefinidas e calcula um score de aprovação. É a forma mais rápida de medir se uma alteração nos blocos melhorou ou piorou o agente.</div>
+
+      <div class="h-steps">
+        <div class="h-step"><div class="h-step-num">1</div><div class="h-step-body"><b>Selecione a categoria (opcional)</b><p>Rode "Todas as categorias" para um score geral, ou filtre por uma categoria específica para diagnósticos mais rápidos.</p></div></div>
+        <div class="h-step"><div class="h-step-num">2</div><div class="h-step-body"><b>Ative o Juiz LLM se quiser análise qualitativa</b><p>Com o juiz ligado, o DeepSeek avalia empatia, precisão e clareza de cada resposta além do teste binário de keywords. Mais lento, mais rico.</p></div></div>
+        <div class="h-step"><div class="h-step-num">3</div><div class="h-step-body"><b>Clique &#9654; Rodar e acompanhe em tempo real</b><p>Os resultados aparecem conforme os testes são processados. <span class="h-b green">OK</span> = passou, <span class="h-b red">FAIL</span> = falhou.</p></div></div>
+        <div class="h-step"><div class="h-step-num">4</div><div class="h-step-body"><b>Clique em um item FAIL para ver o detalhe</b><p>O modal de detalhe mostra a resposta completa do agente, a keyword que faltou e a avaliação do juiz.</p></div></div>
+        <div class="h-step"><div class="h-step-num">5</div><div class="h-step-body"><b>Salve a versão se o score melhorou</b><p>Use o botão <strong>&#128190; Salvar</strong> para guardar um snapshot dos blocos com o score atual. Você pode restaurar qualquer versão anterior com um clique.</p></div></div>
+      </div>
+
+      <!-- Mockup de resultado de testes -->
+      <div class="h-mockup">
+        <div class="h-mockup-bar">
+          <div class="h-dot" style="background:#ff5f57"></div>
+          <div class="h-dot" style="background:#febc2e"></div>
+          <div class="h-dot" style="background:#28c840"></div>
+          <span class="h-mockup-title">Aba Rodar — Resultados</span>
+        </div>
+        <div class="h-mockup-body">
+          <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">
+            <div style="border:2px solid var(--green);border-radius:8px;padding:6px 14px;text-align:center">
+              <div style="font-size:24px;font-weight:700;color:var(--green)">92%</div>
+              <div style="font-size:9px;color:var(--gray-400)">Score</div>
+            </div>
+            <div style="flex:1">
+              <div style="font-size:11px;color:var(--gray-500);margin-bottom:5px">Categoria: Todas</div>
+              <div style="height:7px;background:var(--gray-200);border-radius:4px;overflow:hidden">
+                <div style="width:92%;height:100%;background:var(--green);border-radius:4px"></div>
+              </div>
+              <div style="font-size:10px;color:var(--gray-400);margin-top:4px">23/25 — concluído em 18s</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <div style="display:flex;align-items:center;gap:7px;padding:5px 8px;background:var(--gray-50);border-radius:5px;font-size:11px">
+              <span style="background:#dcfce7;color:#16a34a;font-size:9px;font-weight:700;padding:1px 6px;border-radius:8px">OK</span>
+              <span style="flex:1;color:var(--gray-700)">Quero abrir um sinistro</span>
+              <span style="color:var(--blue);font-size:10px">★ 9/10</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:7px;padding:5px 8px;background:#fff5f5;border-radius:5px;font-size:11px;border:1px solid #fee2e2">
+              <span style="background:#fee2e2;color:#dc2626;font-size:9px;font-weight:700;padding:1px 6px;border-radius:8px">FAIL</span>
+              <span style="flex:1;color:var(--gray-700)">Como acesso o portal do associado?</span>
+              <span style="color:var(--red);font-size:10px">keyword: "portal"</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:7px;padding:5px 8px;background:var(--gray-50);border-radius:5px;font-size:11px">
+              <span style="background:#dcfce7;color:#16a34a;font-size:9px;font-weight:700;padding:1px 6px;border-radius:8px">OK</span>
+              <span style="flex:1;color:var(--gray-700)">Preciso falar com um humano</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-grid">
+        <div class="h-card"><div class="h-card-head"><span class="h-score" style="border-color:var(--green);color:var(--green)"><span class="n">90–100%</span></span></div><p><strong>Excelente.</strong> O agente está bem treinado. Pode salvar a versão.</p></div>
+        <div class="h-card"><div class="h-card-head"><span class="h-score" style="border-color:var(--orange);color:var(--orange)"><span class="n">70–89%</span></span></div><p><strong>Atenção.</strong> Revisar os itens FAIL e ajustar os blocos relevantes.</p></div>
+        <div class="h-card"><div class="h-card-head"><span class="h-score" style="border-color:var(--red);color:var(--red)"><span class="n">&lt; 70%</span></span></div><p><strong>Crítico.</strong> O agente está com falhas sérias. Revise os blocos e reteste.</p></div>
+        <div class="h-card"><div class="h-card-head" style="color:var(--blue)">&#9878; Juiz LLM</div><p>Avaliação extra por DeepSeek: <em>empatia, precisão, clareza</em> e sugestões de melhoria para cada resposta.</p></div>
+      </div>
+    </div>
+
+    <!-- ══ SEÇÃO 5 — GERENCIAR TESTES ══ -->
+    <div class="h-section" id="h-sec-4">
+      <div class="h-section-title">Criando e Editando Testes</div>
+      <div class="h-section-lead">A aba <strong>Testes</strong> lista todos os casos de teste. Cada caso define uma pergunta, o comportamento esperado (ação) e critérios de aprovação por keywords. Quanto mais testes, mais confiável o score.</div>
+
+      <div class="h-steps">
+        <div class="h-step"><div class="h-step-num">1</div><div class="h-step-body"><b>Vá na aba Testes e clique "+ Novo"</b><p>Um modal abrirá com os campos do caso de teste.</p></div></div>
+        <div class="h-step"><div class="h-step-num">2</div><div class="h-step-body"><b>Escreva a pergunta como o usuário digitaria</b><p>Use linguagem natural e informal. Ex: "preciso abrir um sinistro meu carro bateu" em vez de "Solicitar abertura de sinistro veicular."</p></div></div>
+        <div class="h-step"><div class="h-step-num">3</div><div class="h-step-body"><b>Defina a Action esperada</b><p><span class="h-b gray">null</span> = resposta normal de texto. <span class="h-b blue">redirect</span> = agente deve enviar link do portal. <span class="h-b green">phone</span> = agente deve sugerir WhatsApp.</p></div></div>
+        <div class="h-step"><div class="h-step-num">4</div><div class="h-step-body"><b>Adicione Keywords obrigatórias</b><p>Palavras que DEVEM aparecer na resposta. O teste falha se o agente não mencionar. Use termos-chave como "portal", "sinistro", "protocolo".</p></div></div>
+        <div class="h-step"><div class="h-step-num">5</div><div class="h-step-body"><b>Adicione Palavras proibidas (opcional)</b><p>Palavras que NÃO devem aparecer. Útil para detectar alucinações: proíba "garantia total", "100%", "sempre aprovado".</p></div></div>
+      </div>
+
+      <!-- Mockup do modal de teste -->
+      <div class="h-mockup">
+        <div class="h-mockup-bar">
+          <div class="h-dot" style="background:#ff5f57"></div>
+          <div class="h-dot" style="background:#febc2e"></div>
+          <div class="h-dot" style="background:#28c840"></div>
+          <span class="h-mockup-title">Modal — Novo Caso de Teste</span>
+        </div>
+        <div class="h-mockup-body">
+          <div style="display:flex;flex-direction:column;gap:9px">
+            <div>
+              <div style="font-size:9px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Pergunta</div>
+              <div style="border:1px solid var(--blue);border-radius:5px;padding:7px 10px;font-size:12px;color:var(--gray-700);background:white">Quero abrir um sinistro, meu carro foi batido ontem</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Action esperada</div>
+                <div style="border:1px solid var(--gray-300);border-radius:5px;padding:6px 10px;font-size:12px;background:white;color:var(--gray-700)">null (resposta normal)</div>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Categoria</div>
+                <div style="border:1px solid var(--gray-300);border-radius:5px;padding:6px 10px;font-size:12px;background:white;color:var(--gray-700)">abertura_sinistro</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:9px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Keywords obrigatórias</div>
+              <div style="display:flex;gap:5px;flex-wrap:wrap;border:1px solid var(--gray-200);border-radius:5px;padding:6px;background:white">
+                <span style="background:var(--blue-light);color:var(--blue);font-size:10px;padding:2px 8px;border-radius:10px">sinistro</span>
+                <span style="background:var(--blue-light);color:var(--blue);font-size:10px;padding:2px 8px;border-radius:10px">portal</span>
+                <span style="background:var(--blue-light);color:var(--blue);font-size:10px;padding:2px 8px;border-radius:10px">protocolo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-tip"><b>&#128161; Dica de qualidade</b>Crie pelo menos 5 testes por categoria. Para cada intenção importante (abrir sinistro, pedir número, falar com humano, dúvida sobre cobertura), tenha variações com linguagens diferentes. Isso torna o score muito mais confiável.</div>
+    </div>
+
+    <!-- ══ SEÇÃO 6 — SIMULAÇÕES LLM ══ -->
+    <div class="h-section" id="h-sec-5">
+      <div class="h-section-title">Simulações LLM</div>
+      <div class="h-section-lead">O sistema de <strong>Simulações</strong> usa inteligência artificial para simular um usuário real conversando com o agente. Ao final, um <em>juiz DeepSeek</em> avalia toda a conversa com notas e feedback detalhado.</div>
+
+      <div class="h-steps">
+        <div class="h-step"><div class="h-step-num">1</div><div class="h-step-body"><b>Clique em "+ Nova Persona"</b><p>Uma persona é o perfil do usuário simulado: quem é, o que quer, como se comporta.</p></div></div>
+        <div class="h-step"><div class="h-step-num">2</div><div class="h-step-body"><b>Preencha o Contexto</b><p>Descreva quem é essa pessoa. Ex: "Mulher de 52 anos, bateu o carro no estacionamento do trabalho, nunca abriu sinistro antes, está nervosa."</p></div></div>
+        <div class="h-step"><div class="h-step-num">3</div><div class="h-step-body"><b>Defina o Objetivo</b><p>O que ela quer conseguir na conversa. Ex: "Quer abrir o sinistro, entender se a cobertura inclui colisão em estacionamento e saber o prazo."</p></div></div>
+        <div class="h-step"><div class="h-step-num">4</div><div class="h-step-body"><b>Configure a Escalação esperada e os turnos</b><p>Se a persona deveria ser encaminhada ao portal (redirect) ou WhatsApp (phone), defina isso. O juiz avaliará se o agente escalou corretamente.</p></div></div>
+        <div class="h-step"><div class="h-step-num">5</div><div class="h-step-body"><b>Clique &#9654; Simular e aguarde</b><p>O sistema roda a conversa automaticamente. Ao final, o juiz DeepSeek analisa empatia, precisão, fluidez, objetivo e escalação.</p></div></div>
+      </div>
+
+      <!-- Mockup de simulação -->
+      <div class="h-mockup">
+        <div class="h-mockup-bar">
+          <div class="h-dot" style="background:#ff5f57"></div>
+          <div class="h-dot" style="background:#febc2e"></div>
+          <div class="h-dot" style="background:#28c840"></div>
+          <span class="h-mockup-title">Simulação — Motorista nervoso após colisão</span>
+        </div>
+        <div class="h-mockup-body" style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-size:9px;color:var(--gray-400)">Usuário simulado</div>
+            <div style="background:var(--gray-100);border-radius:10px;border-bottom-left-radius:2px;padding:8px 11px;font-size:12px;color:var(--gray-800);align-self:flex-start;max-width:80%">Olá meu carro foi batido hoje, preciso abrir um sinistro urgente</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+            <div style="font-size:9px;color:var(--gray-400)">Metis</div>
+            <div style="background:var(--blue);border-radius:10px;border-bottom-right-radius:2px;padding:8px 11px;font-size:12px;color:white;align-self:flex-end;max-width:80%">Entendo sua situação, vou te ajudar agora. Para iniciar o sinistro, acesse o Portal do Associado ou me informe o número do seu contrato.</div>
+          </div>
+          <!-- Judge card mockup -->
+          <div style="border:1px solid var(--gray-200);border-radius:8px;padding:11px;background:var(--gray-50);margin-top:4px">
+            <div style="font-size:9px;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Avaliação DeepSeek</div>
+            <div style="display:flex;gap:14px;margin-bottom:8px">
+              <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--green)">9</div><div style="font-size:9px;color:var(--gray-400)">Geral</div></div>
+              <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--green)">8</div><div style="font-size:9px;color:var(--gray-400)">Empatia</div></div>
+              <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--green)">9</div><div style="font-size:9px;color:var(--gray-400)">Precisão</div></div>
+              <div style="text-align:center"><div style="font-size:18px;font-weight:700;color:var(--orange)">7</div><div style="font-size:9px;color:var(--gray-400)">Fluidez</div></div>
+            </div>
+            <div style="display:flex;gap:5px;margin-bottom:6px">
+              <span style="background:#dcfce7;color:#16a34a;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">&#10003; Objetivo</span>
+              <span style="background:#dcfce7;color:#16a34a;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px">&#10003; Escalação</span>
+            </div>
+            <div style="font-size:11px;color:var(--gray-600)">O agente demonstrou empatia e orientou corretamente para o portal. Poderia confirmar mais rapidamente o número do protocolo.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-tip"><b>&#128161; Dica de persona</b>Quanto mais realista e específico o contexto, mais útil o teste. Use situações reais do dia a dia: "cliente que já ligou 3 vezes sem resolução", "pessoa idosa com dificuldade para acessar o portal", "motorista profissional preocupado com prazo de reembolso".</div>
+    </div>
+
+  </div><!-- /help-body -->
+</div><!-- /help-wrap -->
+</div><!-- /help-overlay -->
 
 <!-- MOBILE BOTTOM NAV -->
 <div id="mobile-nav">
@@ -1097,6 +1586,23 @@ async function doImport() {
   await loadCategories();
   toast('Importado ' + (d.imported || tests.length) + ' testes', 'success');
 }
+
+// ── HELP MODAL ─────────────────────────────────────────────────
+function openHelp() { document.getElementById('help-overlay').classList.add('open'); }
+function closeHelp() { document.getElementById('help-overlay').classList.remove('open'); }
+
+function switchHelp(idx) {
+  document.querySelectorAll('.h-nav-item').forEach(b => b.classList.toggle('active', +b.dataset.sec === idx));
+  document.querySelectorAll('.h-section').forEach((s, i) => s.classList.toggle('active', i === idx));
+  document.getElementById('help-body').scrollTop = 0;
+}
+
+document.getElementById('help-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeHelp();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeHelp();
+});
 
 // ── MOBILE NAV ─────────────────────────────────────────────────
 function showMobPanel(name) {
