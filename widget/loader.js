@@ -1,7 +1,3 @@
-<?php
-header('Content-Type: application/javascript; charset=utf-8');
-require_once dirname(__DIR__) . '/api/config.php';
-?>
 /* Metis Brasil — Widget Loader
    Cole este script no <head> ou antes do </body> do seu site:
    <script src="http://localhost/sinistro/widget/loader.js"></script>
@@ -25,13 +21,15 @@ require_once dirname(__DIR__) . '/api/config.php';
   window.METIS_WIDGET_LOGO     = base + '/img/logo.png';
   window.METIS_WIDGET_LOGO_BTN = base + '/img/logoCHAT.png';
 
-  // Nome e boas-vindas — fonte única: knowledge.json (bloco boas_vindas / campo agent_name)
-  window.METIS_AGENT_NAME      = '<?= addslashes(AGENT_NAME) ?>';
-  window.METIS_WELCOME_MSG     = '<?= addslashes(WELCOME_MESSAGE) ?>';
-
-  // Carrega o widget.js principal
-  var script = document.createElement('script');
-  script.src = base + '/widget/widget.js';
-  script.async = true;
-  (document.head || document.body || document.documentElement).appendChild(script);
+  // Carrega config.php (PHP — injeta METIS_AGENT_NAME e METIS_WELCOME_MSG),
+  // depois carrega widget.js no onload para garantir ordem correta.
+  var cfg = document.createElement('script');
+  cfg.src = base + '/widget/config.php';
+  cfg.onload = function () {
+    var widget = document.createElement('script');
+    widget.src = base + '/widget/widget.js';
+    widget.async = true;
+    (document.head || document.body || document.documentElement).appendChild(widget);
+  };
+  (document.head || document.body || document.documentElement).appendChild(cfg);
 })();
