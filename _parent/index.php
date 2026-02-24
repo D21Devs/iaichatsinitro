@@ -1,9 +1,13 @@
+<?php
+require_once __DIR__ . '/sinistro/api/config.php';
+$agentName = htmlspecialchars(AGENT_NAME);
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Metis Brasil — Assistente Virtual com IA</title>
+  <title><?= $agentName ?> — Assistente Virtual com IA</title>
   <meta name="description" content="Plataforma de assistente virtual com inteligência artificial. Converse com o agente ou configure sua base de conhecimento no painel de treinamento." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -244,10 +248,10 @@
 
     <div class="hero">
       <div class="logo-wrap">
-        <img src="sinistro/img/logo.png" alt="Metis Brasil" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='block'">
-        <span class="logo-text" style="display:none">Metis</span>
+        <img src="sinistro/img/logo.png" alt="<?= $agentName ?>" onerror="this.style.display='none';this.parentElement.querySelector('.logo-text').style.display='block'">
+        <span class="logo-text" style="display:none"><?= $agentName ?></span>
       </div>
-      <h1 class="hero-title">Metis Brasil</h1>
+      <h1 class="hero-title"><?= $agentName ?></h1>
       <p class="hero-sub">
         Plataforma de <strong style="color:var(--blue-300)">assistente virtual com IA</strong>
         para atendimento inteligente, base de conhecimento e simulações de qualidade.
@@ -260,7 +264,7 @@
         <div class="card-icon">💬</div>
         <div class="card-title">Falar com o Agente</div>
         <div class="card-desc">
-          Converse em tempo real com o assistente — tire dúvidas, obtenha informações e veja o agente em ação.
+          Converse em tempo real com o <?= $agentName ?> — tire dúvidas, obtenha informações e veja o agente em ação.
         </div>
         <div class="card-cta">Acessar agora &rarr;</div>
       </a>
