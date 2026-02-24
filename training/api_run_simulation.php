@@ -99,12 +99,12 @@ function callJudge(array $persona, array $conv): array {
 
     $transcript = '';
     foreach ($conv as $t) {
-        $who = $t['role'] === 'user' ? '[Usuário]' : '[Metis]';
+        $who = $t['role'] === 'user' ? '[Usuário]' : '[' . AGENT_NAME . ']';
         $transcript .= $who . ': ' . $t['message'] . "\n";
     }
 
     $escEsc = json_encode($persona['escalation_expected'] ?? null);
-    $prompt = "Avalie esta conversa simulada entre um usuário e a Assistente Metis (chatbot de sinistros).\n\n"
+    $prompt = "Avalie esta conversa simulada entre um usuário e o " . AGENT_NAME . " (chatbot de sinistros).\n\n"
         . "PERSONA: " . $persona['context'] . "\n"
         . "OBJETIVO: " . $persona['goal'] . "\n"
         . "ESCALAÇÃO ESPERADA: $escEsc\n\n"
@@ -177,7 +177,7 @@ $userSimHistory = [['role' => 'system', 'content' => $userSimPrompt]];
 $fullConv = [];
 
 // Mensagem de boas-vindas do bot (fixa, sem chamada de API)
-$welcomeMsg = 'Olá! Eu sou a Assistente Metis. Estou aqui para te ajudar com sinistros da Metis Brasil. Como posso te ajudar hoje?';
+$welcomeMsg = WELCOME_MESSAGE;
 $botHistory[]     = ['role' => 'assistant', 'content' => json_encode(['message' => $welcomeMsg, 'action' => null, 'url' => null, 'number' => null], JSON_UNESCAPED_UNICODE)];
 $userSimHistory[] = ['role' => 'user', 'content' => $welcomeMsg];
 $fullConv[]       = ['role' => 'bot', 'message' => $welcomeMsg];

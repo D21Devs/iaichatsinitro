@@ -97,6 +97,20 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
 .toggle input:checked + .toggle-slider { background: var(--blue); }
 .toggle input:checked + .toggle-slider:before { transform: translateX(16px); }
 
+/* ── AGENT NAME FIELD ────────────────────────────────────── */
+#agent-name-bar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 12px; border-bottom: 1px solid var(--gray-200);
+  background: var(--gray-50); flex-shrink: 0;
+}
+#agent-name-bar label { font-size: 11px; font-weight: 600; color: var(--gray-500); white-space: nowrap; }
+#agent-name-input {
+  flex: 1; padding: 4px 8px; font-size: 12px;
+  border: 1px solid var(--gray-300); border-radius: var(--radius);
+  outline: none; background: white;
+}
+#agent-name-input:focus { border-color: var(--blue); box-shadow: 0 0 0 2px var(--blue-light); }
+
 /* ── KNOWLEDGE BLOCKS ────────────────────────────────────── */
 #blocks-list { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
 
@@ -492,6 +506,12 @@ textarea { resize: vertical; width: 100%; font-size: 12px; line-height: 1.5; }
     <div class="panel-header">
       <span class="panel-title">Blocos de Conhecimento</span>
       <button class="btn btn-primary btn-sm" onclick="openBlockModal(null)">+ Novo</button>
+    </div>
+    <div id="agent-name-bar">
+      <label for="agent-name-input">Nome do agente</label>
+      <input type="text" id="agent-name-input" placeholder="Ex: Assistente Metis" maxlength="60"
+             onkeydown="if(event.key==='Enter')saveAgentName()"
+             onblur="saveAgentName()">
     </div>
     <div class="panel-body">
       <div id="blocks-list"><div style="padding:20px;color:var(--gray-400);text-align:center">Carregando...</div></div>
@@ -1188,9 +1208,32 @@ async function loadBlocks() {
     const r = await fetch(API_BASE + '/api_knowledge.php?action=list');
     const data = await r.json();
     blocks = data.blocks || [];
+    // Preenche o campo de nome do agente
+    const inp = document.getElementById('agent-name-input');
+    if (inp && data.agent_name) inp.value = data.agent_name;
     renderBlocks();
     updateHeaderBadge();
   } catch(e) { toast('Erro ao carregar blocos', 'error'); }
+}
+
+let _agentNameTimer = null;
+async function saveAgentName() {
+  const inp = document.getElementById('agent-name-input');
+  const name = (inp?.value || '').trim();
+  if (!name || name === (inp._lastSaved || '')) return;
+  inp._lastSaved = name;
+  clearTimeout(_agentNameTimer);
+  _agentNameTimer = setTimeout(async () => {
+    try {
+      const r = await fetch(API_BASE + '/api_knowledge.php?action=save_meta', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ agent_name: name })
+      });
+      const d = await r.json();
+      if (d.ok) toast('Nome do agente salvo', 'success');
+      else toast(d.error || 'Erro ao salvar nome', 'error');
+    } catch(e) { toast('Erro ao salvar nome', 'error'); }
+  }, 400);
 }
 
 function renderBlocks() {

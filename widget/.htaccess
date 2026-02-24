@@ -1,0 +1,4 @@
+# Processa loader.js como PHP para injetar variáveis de config (AGENT_NAME etc.)
+<Files "loader.js">
+    SetHandler application/x-httpd-php
+</Files>

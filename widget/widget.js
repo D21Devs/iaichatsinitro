@@ -6,12 +6,14 @@
   'use strict';
 
   /* ---- Config ---- */
-  var API_URL     = window.METIS_WIDGET_API || '/sinistro/api/chat.php';
-  var SESSION_KEY = 'metis_chat_sid';
-  var BRAND_COLOR = '#20629d';
-  var BRAND_DARK  = '#1a5285';
-  var LOGO_URL     = window.METIS_WIDGET_LOGO     || '/sinistro/img/logo.png';
-  var LOGO_BTN_URL = window.METIS_WIDGET_LOGO_BTN || '/sinistro/img/logoCHAT.png';
+  var AGENT_NAME   = window.METIS_AGENT_NAME      || 'Assistente';  // definido pelo loader.js via api/config.php
+  var WELCOME_MSG  = window.METIS_WELCOME_MSG      || 'Olá! Como posso te ajudar hoje?';
+  var API_URL      = window.METIS_WIDGET_API       || '/sinistro/api/chat.php';
+  var SESSION_KEY  = 'metis_chat_sid';
+  var BRAND_COLOR  = '#20629d';
+  var BRAND_DARK   = '#1a5285';
+  var LOGO_URL     = window.METIS_WIDGET_LOGO      || '/sinistro/img/logo.png';
+  var LOGO_BTN_URL = window.METIS_WIDGET_LOGO_BTN  || '/sinistro/img/logoCHAT.png';
 
   /* ---- Session ID (persiste entre recarregamentos) ---- */
   var sessionId = (function () {
@@ -213,7 +215,7 @@
     // ---- Botão flutuante ----
     var btn = document.createElement('button');
     btn.id = 'metis-btn';
-    btn.setAttribute('aria-label', 'Abrir chat Metis Brasil');
+    btn.setAttribute('aria-label', 'Abrir chat ' + AGENT_NAME);
     btn.innerHTML = IC_CHAT + '<span id="metis-badge"></span>';
     btn.addEventListener('click', toggleChat);
 
@@ -221,12 +223,12 @@
     var win = document.createElement('div');
     win.id = 'metis-win';
     win.setAttribute('role', 'dialog');
-    win.setAttribute('aria-label', 'Chat Assistente Metis');
+    win.setAttribute('aria-label', 'Chat ' + AGENT_NAME);
     win.innerHTML =
       '<div class="m-hd">' +
-        '<img class="m-logo" src="' + LOGO_BTN_URL + '" alt="Metis Brasil">' +
+        '<img class="m-logo" src="' + LOGO_BTN_URL + '" alt="' + AGENT_NAME + '">' +
         '<div class="m-info">' +
-          '<span class="m-title">Assistente Metis</span>' +
+          '<span class="m-title">' + AGENT_NAME + '</span>' +
           '<div class="m-sub"><span class="m-dot"></span>Online agora</div>' +
         '</div>' +
         '<button class="m-close" id="metis-cls" aria-label="Fechar">&#x2715;</button>' +
@@ -286,7 +288,7 @@
     var t1 = showTyping();
     delay(900, function () {
       removeEl(t1);
-      addBot('Olá! Eu sou a Assistente Metis. Estou aqui para te ajudar com sinistros da Metis Brasil. Como posso te ajudar hoje?');
+      addBot(WELCOME_MSG);
     });
   }
 

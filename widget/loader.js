@@ -1,3 +1,7 @@
+<?php
+header('Content-Type: application/javascript; charset=utf-8');
+require_once dirname(__DIR__) . '/api/config.php';
+?>
 /* Metis Brasil — Widget Loader
    Cole este script no <head> ou antes do </body> do seu site:
    <script src="http://localhost/sinistro/widget/loader.js"></script>
@@ -20,6 +24,10 @@
   window.METIS_WIDGET_API      = base + '/api/chat.php';
   window.METIS_WIDGET_LOGO     = base + '/img/logo.png';
   window.METIS_WIDGET_LOGO_BTN = base + '/img/logoCHAT.png';
+
+  // Nome e boas-vindas — fonte única: knowledge.json (bloco boas_vindas / campo agent_name)
+  window.METIS_AGENT_NAME      = '<?= addslashes(AGENT_NAME) ?>';
+  window.METIS_WELCOME_MSG     = '<?= addslashes(WELCOME_MESSAGE) ?>';
 
   // Carrega o widget.js principal
   var script = document.createElement('script');

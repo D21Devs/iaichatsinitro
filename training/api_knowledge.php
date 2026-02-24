@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(200); exit; }
 $KNOWLEDGE_FILE = __DIR__ . '/knowledge.json';
 
 function loadKnowledge($file) {
-    return json_decode(file_get_contents($file), true);
+    if (!file_exists($file)) return ['blocks' => []];
+    return json_decode(file_get_contents($file), true) ?? ['blocks' => []];
 }
 function saveKnowledge($file, $data) {
     $data['updated_at'] = date('Y-m-d H:i:s');
@@ -63,6 +64,15 @@ if ($method === 'POST') {
         $ids = $body['ids'];
         $indexed = array_column($knowledge['blocks'], null, 'id');
         $knowledge['blocks'] = array_values(array_filter(array_map(fn($id) => $indexed[$id] ?? null, $ids)));
+        saveKnowledge($KNOWLEDGE_FILE, $knowledge);
+        echo json_encode(['ok' => true]);
+        exit;
+    }
+
+    if ($action === 'save_meta') {
+        $name = trim($body['agent_name'] ?? '');
+        if ($name === '') { echo json_encode(['ok' => false, 'error' => 'Nome não pode ser vazio.']); exit; }
+        $knowledge['agent_name'] = $name;
         saveKnowledge($KNOWLEDGE_FILE, $knowledge);
         echo json_encode(['ok' => true]);
         exit;
