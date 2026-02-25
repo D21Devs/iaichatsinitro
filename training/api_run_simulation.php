@@ -17,12 +17,18 @@
 error_reporting(0);
 ini_set('display_errors', '0');
 
+// Limpa buffers ativos (output_buffering do php.ini em hosting compartilhado)
+while (ob_get_level() > 0) { ob_end_clean(); }
+ini_set('output_buffering', '0');
+ini_set('zlib.output_compression', '0');
+
 header('Content-Type: text/event-stream; charset=utf-8');
-header('Cache-Control: no-cache');
+header('Cache-Control: no-cache, must-revalidate');
 header('X-Accel-Buffering: no');
 header('Access-Control-Allow-Origin: *');
+header('Connection: keep-alive');
 
-set_time_limit(0);
+@set_time_limit(300);
 ob_implicit_flush(true);
 
 function sse(array $data): void {

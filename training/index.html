@@ -120,7 +120,15 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Sego
   background: white;
 }
 .block-card:hover { border-color: var(--blue); box-shadow: 0 0 0 2px var(--blue-light); }
-.block-card.inactive { opacity: .6; }
+.block-card.inactive {
+  opacity: 1;
+  background: var(--gray-100);
+  border-color: var(--gray-300);
+  border-style: dashed;
+}
+.block-card.inactive .block-name  { color: var(--gray-400); }
+.block-card.inactive .block-preview { color: var(--gray-300); }
+.block-card.inactive .toggle-slider { background: var(--gray-300) !important; }
 
 .block-top { display: flex; align-items: center; gap: 8px; }
 .block-name { font-weight: 600; font-size: 12px; flex: 1; }
